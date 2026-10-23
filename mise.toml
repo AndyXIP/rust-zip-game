@@ -1,0 +1,31 @@
+[tools]
+rust = { version = "1.97.1", components = "clippy,rustfmt" }
+github-cli = "2.102.0"
+
+[tasks.fmt]
+description = "Format code"
+dir = "zip"
+run = "cargo fmt"
+
+[tasks.check]
+description = "Check formatting and run clippy"
+dir = "zip"
+run = [
+  "cargo fmt --check",
+  "cargo clippy --all-targets --locked -- -D warnings",
+]
+
+[tasks.test]
+description = "Run tests"
+dir = "zip"
+run = "cargo test --all-targets --locked"
+
+[tasks.build]
+description = "Build release binary"
+dir = "zip"
+run = "cargo build --release --locked"
+
+[tasks.run]
+description = "Run the game"
+dir = "zip"
+run = "cargo run"
