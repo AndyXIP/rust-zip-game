@@ -1,5 +1,6 @@
 [tools]
 rust = { version = "1.97.1", components = "clippy,rustfmt" }
+github-cli = "2.102.0"
 
 [tasks.fmt]
 description = "Format code"
